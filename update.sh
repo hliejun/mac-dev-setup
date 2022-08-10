@@ -3,17 +3,9 @@ script_dir_path=$(
     cd "$(dirname "$0")"
     pwd
 )
-cat <<EOS
-
- AkkeyLab
-
- The elapsed time does not matter.
- Because speed is important.
-
-EOS
 
 #
-# mac-auto-setup repository update
+# mac-dev-setup repository update
 #
 cd $script_dir_path
 git checkout master
