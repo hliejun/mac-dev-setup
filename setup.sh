@@ -1,12 +1,4 @@
 #!/bin/bash
-cat <<EOS
-
- AkkeyLab
-
- The elapsed time does not matter.
- Because speed is important.
-
-EOS
 
 function command_exists {
   command -v "$1" >/dev/null
@@ -62,15 +54,6 @@ if [ ! -e "$(brew --prefix)/bin/zsh" ]; then
   # This is a workaround for problems that Xcode and others may refer to
   echo $pass | sudo sh -c "mkdir -p /usr/local/bin & ln -s $(brew --prefix)/bin/zsh /usr/local/bin/zsh"
   chsh -s "$(brew --prefix)/bin/zsh"
-  echo " ------------ END ------------"
-fi
-
-#
-# Install vim
-#
-if ! command_exists vim; then
-  echo " ------------ Vim ------------"
-  brew install vim
   echo " ------------ END ------------"
 fi
 
