@@ -1,48 +1,43 @@
 #!/bin/bash
-cat <<EOS
 
- AkkeyLab
-
- The elapsed time does not matter.
- Because speed is important.
-
-EOS
-
-#
-# Install web apps.
-#
-echo " ----- Install web apps ------"
-brew install --cask 1password
+echo " ----- Install developer tools ------"
 brew tap AdoptOpenJDK/openjdk
 brew install --cask adoptopenjdk
 brew install --cask android-studio
 brew install --cask docker
-brew install --cask google-chrome
-brew install --cask iterm2
-brew install --cask google-japanese-ime
-brew install --cask slack
-brew install --cask spotify
-brew install --cask imageoptim
-brew install --cask visual-studio-code
-brew install --cask adobe-creative-cloud
-brew install --cask gyazo
-brew install --cask zoomus
-brew install --cask discord
-brew install --cask notion
-brew install --cask figma
-brew install --cask tableplus
 brew install --cask postman
-brew install --cask clipy
-brew install --cask alfred
+brew install --cask visual-studio-code
+brew install --cask figma
+brew install --cask sourcetree
+brew install scrcpy
+brew install node
+brew install watchman
+brew install nvm
+brew install rbenv
+brew install cocoapods
 
-read -p 'Do you want to install license need apps ? [y/n]' input
-case $input in
-'' | [Nn]*)
-  echo "Skip"
-  ;;
-[Yy]*)
-  brew install --cask microsoft-office
-  brew install --cask intellij-idea
-  brew install --cask clip-studio-paint
-  ;;
+echo " ----- Install network tools ------"
+brew install --cask google-chrome
+brew install --cask firefox
+brew install --cask microsoft-edge
+brew install --cask openvpn-connect
+
+echo " ----- Install media file tools ------"
+brew install --cask imageoptim
+brew install --cask handbrake
+brew install --cask keka
+
+echo " ----- Install productivity tools ------"
+brew install --cask spotify
+brew install --cask notion
+brew install --cask todoist
+brew install --cask rectangle
+brew install --cask hiddenbar
+
+echo " ----- Install communication tools ------"
+brew install --cask slack
+brew install --cask zoomus
+brew install --cask telegram
+brew install --cask microsoft-teams
+
 esac
