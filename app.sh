@@ -40,5 +40,3 @@ brew install --cask slack
 brew install --cask zoom
 brew install --cask telegram
 brew install --cask microsoft-teams
-
-esac
