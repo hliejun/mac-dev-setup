@@ -37,7 +37,7 @@ brew install --cask hiddenbar
 
 echo " ----- Install communication tools ------"
 brew install --cask slack
-brew install --cask zoomus
+brew install --cask zoom
 brew install --cask telegram
 brew install --cask microsoft-teams
 
