@@ -45,7 +45,7 @@ read -sp "Your Password: " pass
 # Mac App Store apps install
 #
 if ! command_exists mas; then
-  echo " ---- Mac App Store apps -----"
+  echo " ---- Mac App Store and XCode -----"
   brew install mas
   mas install 497799835 # Xcode
   echo " ------------ END ------------"
@@ -114,16 +114,6 @@ cp $(
 echo " ------------ END ------------"
 
 #
-# Install asdf
-#
-if ! command_exists asdf; then
-  echo " ----------- asdf ------------"
-  brew install asdf
-  echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >>~/.yadr/zsh/private.zsh
-  echo " ------------ END ------------"
-fi
-
-#
 # Install ruby
 #
 if [ ! -e "$(echo ~$USERNAME)/.asdf/shims/ruby" ]; then
@@ -136,49 +126,6 @@ if [ ! -e "$(echo ~$USERNAME)/.asdf/shims/ruby" ]; then
   ruby -v
   where ruby
   asdf which ruby
-  echo " ------------ END ------------"
-fi
-
-#
-# Install Golang
-#
-if [ ! -e "$(echo ~$USERNAME)/.asdf/shims/go" ]; then
-  echo " ---------- Golang -----------"
-  asdf plugin add golang https://github.com/kennyp/asdf-golang
-  golang_latest=$(asdf list all golang | grep -v '[a-z]' | tail -1 | sed 's/ //g')
-  asdf install golang $golang_latest
-  asdf global golang $golang_latest
-  asdf reshim golang
-  go version
-  where go
-  asdf which go
-
-  go install golang.org/x/tools/gopls@latest
-  go install github.com/go-delve/delve/cmd/dlv@latest
-  go install github.com/cweill/gotests/...@latest
-  asdf reshim golang
-
-  # GOPATH -> https://github.com/kennyp/asdf-golang/blob/master/bin/exec-env
-  # echo -e 'export GOPATH=$(asdf where golang)/go' >>~/.yadr/zsh/private.zsh
-  # echo -e 'export PATH="$PATH:$GOPATH"' >>~/.yadr/zsh/private.zsh
-  echo " ------------ END ------------"
-fi
-
-#
-# gitmoji-cli
-#
-if ! command_exists gitmoji; then
-  echo " --------- gitmoji-cli ----------"
-  brew install gitmoji
-  echo " ------------ END ------------"
-fi
-
-#
-# bat command
-#
-if ! command_exists bat; then
-  echo " --------- bat command ----------"
-  brew install bat
   echo " ------------ END ------------"
 fi
 
