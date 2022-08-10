@@ -9,6 +9,7 @@ brew install --cask postman
 brew install --cask visual-studio-code
 brew install --cask figma
 brew install --cask sourcetree
+brew install --cask flipper
 brew install scrcpy
 brew install node
 brew install watchman
