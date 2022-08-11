@@ -14,6 +14,7 @@ brew install scrcpy
 brew install node
 brew install watchman
 brew install nvm
+brew install jenv
 brew install rbenv
 brew install cocoapods
 
